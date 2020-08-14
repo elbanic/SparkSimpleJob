@@ -16,8 +16,8 @@ object SparkSimpleJob {
       .appName(getClass.getSimpleName)
       .getOrCreate()
 
-    val input = "s3://samples-euijj/wordcount_sample.txt"
-    val output = "s3://samples-euijj/wordcount_output"
+    val input = arg(0)
+    val output = arg(1)
 
     wordcount(spark, input, output)
   }
